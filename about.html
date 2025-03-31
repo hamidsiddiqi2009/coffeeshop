@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Cozy Brew</title>
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Cozy Brew</div>
+        <button class="hamburger">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="about">
+        <h1>Our Story</h1>
+        <p>Founded in 2018, Cozy Brew is a family-owned coffee shop dedicated to crafting exceptional coffee with love and care. We source our beans from sustainable farms and believe in creating a warm, welcoming space for our community.</p>
+        <h2>Our Values</h2>
+        <ul>
+            <li>Quality: Premium ingredients in every cup.</li>
+            <li>Community: A place to connect and unwind.</li>
+            <li>Sustainability: Eco-friendly practices from bean to brew.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Cozy Brew Coffee Shop. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        });
+    </script>
+</body>
+</html>

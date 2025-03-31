@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Cozy Brew</title>
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Cozy Brew</div>
+        <button class="hamburger">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="menu">
+        <h1>Our Menu</h1>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c68b?q=80&w=300" alt="Espresso">
+                <div class="menu-details">
+                    <h3>Espresso</h3>
+                    <p>Rich and bold single shot of pure coffee bliss.</p>
+                    <span>$3.50</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a4b?q=80&w=300" alt="Cappuccino">
+                <div class="menu-details">
+                    <h3>Cappuccino</h3>
+                    <p>Espresso with steamed milk and frothy foam.</p>
+                    <span>$4.00</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=300" alt="Latte">
+                <div class="menu-details">
+                    <h3>Latte</h3>
+                    <p>Smooth espresso with creamy steamed milk.</p>
+                    <span>$4.50</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=300" alt="Mocha">
+                <div class="menu-details">
+                    <h3>Mocha</h3>
+                    <p>Espresso with chocolate and steamed milk.</p>
+                    <span>$5.00</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1534777410147-074cb732fed7?q=80&w=300" alt="Cold Brew">
+                <div class="menu-details">
+                    <h3>Cold Brew</h3>
+                    <p>Smooth, refreshing coffee brewed cold.</p>
+                    <span>$4.25</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1541167760492-2a97b3a9b8b7?q=80&w=300" alt="Croissant">
+                <div class="menu-details">
+                    <h3>Croissant</h3>
+                    <p>Flaky, buttery, and baked fresh daily.</p>
+                    <span>$2.75</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1556742524-750f5caca9e5?q=80&w=300" alt="Muffin">
+                <div class="menu-details">
+                    <h3>Muffin</h3>
+                    <p>Soft and moist, available in blueberry or chocolate.</p>
+                    <span>$3.00</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1601001435829-4172a33d8d38?q=80&w=300" alt="Scone">
+                <div class="menu-details">
+                    <h3>Scone</h3>
+                    <p>Crumbly and sweet, with a hint of vanilla.</p>
+                    <span>$2.50</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1562447575-85e4caca9e5e?q=80&w=300" alt="Danish">
+                <div class="menu-details">
+                    <h3>Danish</h3>
+                    <p>Flaky pastry with fruit or cheese filling.</p>
+                    <span>$3.25</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1577906096429-f73c2c312435?q=80&w=300" alt="Cinnamon Roll">
+                <div class="menu-details">
+                    <h3>Cinnamon Roll</h3>
+                    <p>Warm, gooey, and topped with icing.</p>
+                    <span>$3.75</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Cozy Brew Coffee Shop. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        });
+    </script>
+</body>
+</html>

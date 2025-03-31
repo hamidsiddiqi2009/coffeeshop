@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Cozy Brew</title>
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Cozy Brew</div>
+        <button class="hamburger">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact">
+        <h1>Get in Touch</h1>
+        <div class="contact-info">
+            <p><strong>Location:</strong> 123 Brew Lane, Coffeeville, CA</p>
+            <p><strong>Hours:</strong> Mon-Fri: 7 AM - 6 PM | Sat-Sun: 8 AM - 4 PM</p>
+        </div>
+        <form class="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit" class="btn">Send</button>
+        </form>
+        <div class="reservation-form">
+            <h2>Make a Reservation</h2>
+            <input type="text" placeholder="Name" required>
+            <input type="date" required>
+            <input type="time" required>
+            <button type="submit" class="btn">Reserve</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Cozy Brew Coffee Shop. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        });
+    </script>
+</body>
+</html>
